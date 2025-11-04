@@ -1,0 +1,655 @@
+/* ============================================
+   RESET Y CONFIGURACIÓN BASE
+   ============================================ */
+
+/* Elimina los márgenes y padding por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del body con fondo blanco y tipografía */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff; /* Fondo blanco */
+    color: #000000; /* Color de texto negro */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+
+.container {
+    max-width: 1200px; /* Ancho máximo para contenido */
+    margin: 0 auto; /* Centra el contenido */
+    padding: 2rem 1.5rem; /* Espaciado interno */
+    flex: 1; /* Permite que el contenido ocupe el espacio disponible */
+}
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+
+.section {
+    margin-bottom: 4rem; /* Espacio entre secciones */
+    padding: 2rem 0; /* Espaciado vertical interno */
+}
+
+/* Títulos de sección */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #000000; /* Color de texto negro */
+    position: relative;
+}
+
+/* Línea decorativa bajo los títulos */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ff69b4; /* Color rosa */
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* ============================================
+   SECCIÓN: PRESENTACIÓN
+   ============================================ */
+
+.presentacion-content {
+    display: flex;
+    flex-direction: row; /* Layout horizontal */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacio entre elementos */
+    gap: 3rem;
+    padding: 2rem;
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 20px;
+    border: 3px solid #ff69b4; /* Borde rosa */
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2); /* Sombra suave rosa */
+}
+
+/* Contenedor de la foto de perfil */
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Hace la imagen circular */
+    overflow: hidden; /* Oculta partes que sobresalen del círculo */
+    border: 5px solid #ff69b4; /* Borde rosa */
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4); /* Sombra rosa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Efecto hover en la foto */
+.foto-perfil:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo de la imagen de perfil */
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Información personal */
+.info-personal {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+/* Nombre principal */
+.info-personal h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000000; /* Texto negro */
+}
+
+/* Profesión */
+.profesion {
+    font-size: 1.2rem;
+    color: #ff69b4; /* Color rosa */
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Descripción personal */
+.descripcion {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333333; /* Texto gris oscuro para mejor legibilidad */
+}
+
+/* ============================================
+   SECCIÓN: EXPERIENCIA
+   ============================================ */
+
+.experiencia-content {
+    display: flex;
+    flex-direction: row; /* Layout horizontal */
+    align-items: center; /* Centra verticalmente */
+    gap: 3rem;
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 3px solid #ff69b4; /* Borde rosa */
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2); /* Sombra rosa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en contenido de experiencia */
+.experiencia-content:hover {
+    transform: translateY(-5px); /* Se eleva ligeramente */
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.3); /* Sombra más intensa rosa */
+}
+
+/* Título de experiencia */
+.experiencia-item {
+    flex-shrink: 0; /* Evita que se encoja */
+    min-width: 200px;
+}
+
+.experiencia-item h3 {
+    font-size: 1.8rem;
+    color: #000000; /* Texto negro */
+    font-weight: 700;
+}
+
+/* Descripción de experiencia */
+.experiencia-descripcion {
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+.experiencia-descripcion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333333; /* Texto gris oscuro */
+}
+
+/* ============================================
+   SECCIÓN: HABILIDADES
+   ============================================ */
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsive */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta de habilidad */
+.habilidad-card {
+    background: #ffffff; /* Fondo blanco */
+    border: 2px solid #ff69b4; /* Borde rosa */
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+/* Efecto hover en tarjeta de habilidad */
+.habilidad-card:hover {
+    transform: translateY(-8px); /* Elevación más pronunciada */
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+/* Ícono de habilidad */
+.habilidad-icono {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.habilidad-card h3 {
+    font-size: 1.3rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 1rem;
+}
+
+.habilidad-card p {
+    font-size: 0.95rem;
+    color: #333333; /* Texto gris oscuro */
+    line-height: 1.6;
+}
+
+/* ============================================
+   SECCIÓN: PROYECTOS
+   ============================================ */
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsive */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta de proyecto */
+.proyecto-card {
+    position: relative; /* Permite posicionamiento absoluto de elementos hijos */
+    background: #ffffff; /* Fondo blanco */
+    border: 3px solid #ff69b4; /* Borde rosa */
+    border-radius: 15px;
+    overflow: hidden; /* Oculta contenido que sobresale */
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2); /* Sombra rosa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+/* Efecto hover en tarjeta de proyecto */
+.proyecto-card:hover {
+    transform: translateY(-10px); /* Se eleva más */
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.4); /* Sombra más intensa rosa */
+}
+
+/* Contenedor de imagen del proyecto */
+.proyecto-imagen {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    transition: transform 0.5s ease, filter 0.3s ease; /* Transiciones suaves */
+}
+
+/* Overlay que aparece sobre la imagen */
+.proyecto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease;
+}
+
+/* Muestra el overlay al hacer hover */
+.proyecto-card:hover .proyecto-overlay {
+    opacity: 1; /* Se hace visible */
+}
+
+/* Hint dentro del overlay */
+.proyecto-hint {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite; /* Animación de pulso */
+}
+
+/* Animación de pulso para el hint */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Efecto zoom en imagen al hacer hover */
+.proyecto-card:hover .proyecto-imagen img {
+    transform: scale(1.15); /* Amplía la imagen más */
+    filter: brightness(0.7); /* Oscurece ligeramente la imagen */
+}
+
+/* Descripción del proyecto (oculta por defecto) */
+.proyecto-descripcion {
+    display: none; /* Oculta la descripción por defecto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.98), rgba(255, 182, 193, 0.98)); /* Gradiente rosa */
+    padding: 2rem;
+    z-index: 10; /* Aparece sobre la imagen */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.3s ease; /* Animación de aparición */
+}
+
+/* Muestra la descripción cuando tiene la clase 'mostrar' */
+.proyecto-descripcion.mostrar {
+    display: flex; /* Muestra la descripción */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Título dentro de la descripción */
+.proyecto-descripcion h3 {
+    font-size: 1.8rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Texto de la descripción */
+.proyecto-descripcion p {
+    font-size: 1.1rem;
+    color: #000000; /* Texto negro */
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Botón cerrar */
+.btn-cerrar {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Efecto hover en botón cerrar */
+.btn-cerrar:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cerrar:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   SECCIÓN: CONTACTO
+   ============================================ */
+
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Formulario de contacto */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Grupo de campos del formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Etiquetas del formulario */
+.form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000; /* Texto negro */
+}
+
+/* Inputs y textarea */
+.form-group input,
+.form-group textarea {
+    padding: 0.875rem;
+    border: 2px solid #ff69b4; /* Borde rosa */
+    border-radius: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder de inputs */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999999;
+}
+
+/* Efecto focus en inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Elimina el borde por defecto */
+    border-color: #ff69b4; /* Borde rosa al enfocar */
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2); /* Sombra rosa */
+}
+
+/* Botón de envío */
+.btn-enviar {
+    background: #ff69b4; /* Fondo rosa */
+    color: #ffffff;
+    border: 2px solid #ff69b4;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+/* Efecto hover en botón de envío */
+.btn-enviar:hover {
+    transform: scale(1.05);
+    background: #ff1493; /* Rosa más intenso */
+    box-shadow: 0 6px 25px rgba(255, 105, 180, 0.5);
+}
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}
+
+/* Información de contacto */
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 3px solid #ff69b4; /* Borde rosa */
+}
+
+.contacto-item {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.contacto-item strong {
+    color: #000000; /* Texto negro */
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contacto-item a {
+    color: #ff69b4; /* Color rosa */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacto-item a:hover {
+    color: #ff1493; /* Rosa más intenso al hacer hover */
+}
+
+/* Redes sociales */
+.redes-sociales h3 {
+    font-size: 1.2rem;
+    color: #000000; /* Texto negro */
+    margin-bottom: 1rem;
+}
+
+.red-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #000000;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: #ffffff;
+    border: 2px solid #ff69b4; /* Borde rosa */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.red-social-link:hover {
+    background: #ff69b4;
+    color: #ffffff;
+    transform: translateX(5px); /* Se mueve ligeramente a la derecha */
+}
+
+.red-social-icon {
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background: #ffffff;
+    border-top: 2px solid #ff69b4; /* Borde rosa */
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer p {
+    color: #000000; /* Texto negro */
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   DISEÑO RESPONSIVE (TABLETS Y MÓVILES)
+   ============================================ */
+
+/* Tablets (pantallas menores a 968px) */
+@media screen and (max-width: 968px) {
+    /* Ajuste del contenedor principal */
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Títulos de sección más pequeños */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Nombre en presentación más pequeño */
+    .info-personal h1 {
+        font-size: 2rem;
+    }
+    
+    /* Presentación en columna en tablets */
+    .presentacion-content {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+    
+    /* Experiencia en columna en tablets */
+    .experiencia-content {
+        flex-direction: column; /* Cambia a columna */
+        text-align: center; /* Centra el texto */
+    }
+    
+    /* Contacto en una sola columna */
+    .contacto-content {
+        grid-template-columns: 1fr; /* Cambia a una columna */
+    }
+    
+    /* Proyectos en una columna en pantallas pequeñas */
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móviles (pantallas menores a 640px) */
+@media screen and (max-width: 640px) {
+    /* Espaciado reducido en secciones */
+    .section {
+        margin-bottom: 3rem;
+        padding: 1.5rem 0;
+    }
+    
+    /* Títulos aún más pequeños */
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* Nombre más pequeño */
+    .info-personal h1 {
+        font-size: 1.75rem;
+    }
+    
+    /* Profesión más pequeña */
+    .profesion {
+        font-size: 1rem;
+    }
+    
+    /* Descripción más pequeña */
+    .descripcion {
+        font-size: 1rem;
+    }
+    
+    /* Foto de perfil más pequeña */
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* Info personal centrada en móviles */
+    .info-personal {
+        text-align: center;
+    }
+    
+    /* Habilidades en una columna */
+    .habilidades-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajuste de padding en tarjetas */
+    .experiencia-card,
+    .habilidad-card,
+    .proyecto-info {
+        padding: 1.5rem;
+    }
+}
+
